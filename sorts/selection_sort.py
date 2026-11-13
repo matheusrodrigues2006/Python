@@ -65,6 +65,14 @@ def selection_sort[T: Comparable](collection: MutableSequence[T]) -> MutableSequ
 
     >>> selection_sort([3.2, 1.1, 2.4, 0.5])
     [0.5, 1.1, 2.4, 3.2]
+
+    The input sequence is sorted in place and returned unchanged in identity:
+    >>> values = [3, 1, 2]
+    >>> result = selection_sort(values)
+    >>> result is values
+    True
+    >>> values
+    [1, 2, 3]
     """
     length = len(collection)
     for i in range(length - 1):
